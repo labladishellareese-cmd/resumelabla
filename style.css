@@ -1,43 +1,46 @@
-/* Base Resets */
+/* ==========================================
+   GLOBAL STYLES & FONTS
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #ffffff;
-    color: #2b2d42;
-    line-height: 1.6;
+    background-color: #faf6ee; /* Warm elegant light cream background from Canva reference */
+    color: #111111;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 30px;
 }
 
-/* Navbar */
+/* ==========================================
+   MINIMALIST NAVBAR
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1a1a24;
+    background-color: #111111;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px 50px;
+    z-index: 2000;
 }
 
 .navbar .logo {
-    color: #edf2f4;
+    color: #faf6ee;
     font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -46,199 +49,269 @@ body {
 }
 
 .nav-links li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #8d99ae;
+    color: #c4b59f;
     text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ef233c;
+    color: #faf6ee;
 }
 
-/* Sections Global */
-.section {
+/* ==========================================
+   HERO / INTRO SECTION
+   ========================================== */
+.hero-section {
+    padding: 140px 50px 60px 50px;
+    background-color: #faf6ee;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.main-title {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #ebdcb9;
+    color: #111111;
+    padding: 6px 16px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-subtext {
+    font-family: 'Segoe UI', sans-serif;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.editorial-frame {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: 40px; /* Stylish structural frame curves from design reference */
+    border: 1px solid #111;
+}
+
+/* ==========================================
+   EDITORIAL INTRO / BIO
+   ========================================== */
+.intro-block {
+    background-color: #f3ebd9;
+    padding: 80px 50px;
+}
+
+.editorial-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+.intro-heading h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.rounded-frame {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-bottom: 30px;
+}
+
+.bio-text {
+    font-size: 1.25rem;
+    color: #222;
+}
+
+/* ==========================================
+   CLIENT PORTFOLIO SECTION
+   ========================================== */
+.portfolio-section {
     padding: 100px 0;
 }
 
-.alt-bg {
-    background-color: #f8f9fa;
-}
-
-h2 {
-    font-size: 2.2rem;
-    color: #1a1a24;
-    margin-bottom: 35px;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 40px;
-    height: 4px;
-    background-color: #ef233c;
-}
-
-/* Hero Section */
-.header-section {
-    background: linear-gradient(145deg, #1a1a24 0%, #2b2d42 100%);
-    color: #edf2f4;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    padding-top: 140px;
-}
-
-.hero-text h1 {
-    font-size: 3.2rem;
-    line-height: 1.2;
-}
-
-.hero-text h3 {
-    font-size: 1.5rem;
-    color: #8d99ae;
-    margin: 10px 0 25px 0;
-    font-weight: 400;
-}
-
-.highlight {
-    color: #ef233c;
-}
-
-.bio {
-    font-size: 1.15rem;
-    max-width: 750px;
-    color: #edf2f4;
-    opacity: 0.9;
-}
-
-/* Skills Layout */
-.skills-category h3 {
-    font-size: 1.1rem;
-    color: #8d99ae;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-}
-
-.skill-card {
-    padding: 12px;
+.section-title {
+    font-size: 3rem;
     text-align: center;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    letter-spacing: -1px;
 }
 
-.tool-proficient { border-left: 4px solid #ef233c; }
-.tool-fam { border-left: 4px solid #2b2d42; }
-.expert-card { border-left: 4px solid #8d99ae; }
-
-/* Experience Timeline */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.section-subtitle {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #666;
+    margin-bottom: 60px;
 }
 
-.timeline-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 25px;
+/* 5-Column Horizontal Layout Per Client */
+.showcase-block {
+    background-color: #ffffff;
+    border: 1px solid #e1dcd0;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
 }
 
-.timeline-meta h4 {
-    font-size: 1.2rem;
-    color: #1a1a24;
-}
-
-.timeline-meta span {
-    font-size: 0.9rem;
-    color: #8d99ae;
-}
-
-.timeline-content h5 {
-    font-size: 1.1rem;
-    color: #ef233c;
-    margin-bottom: 8px;
-}
-
-/* Education & Certs Split Grid */
-.education-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-}
-
-.edu-list, .cert-list {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.edu-list li {
+.showcase-header {
     margin-bottom: 20px;
-    font-size: 1.05rem;
 }
 
-.cert-item {
-    background: #fff;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+.showcase-header h3 {
+    font-size: 1.8rem;
+    color: #111;
 }
 
-/* Footer Section */
-.footer-section {
-    background-color: #1a1a24;
-    color: #edf2f4;
+.showcase-header p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.work-gallery-five {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.gallery-slot {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 220px;
+    border: 1px solid #eee;
+    background-color: #faf6ee;
+}
+
+.gallery-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-slot:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-slot .label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(17, 17, 17, 0.8);
+    color: #fff;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   SKILLS PILLS SECTION
+   ========================================== */
+.skills-section {
+    padding: 80px 0;
     text-align: center;
-    padding: 60px 0;
 }
 
-.footer-section h2 {
-    color: #edf2f4;
-    display: inline-block;
+.pill-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
-.contact-details {
-    margin: 25px 0;
+.pill {
+    background-color: #111111;
+    color: #faf6ee;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-.contact-details a, .contact-details span {
-    color: #ef233c;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0 15px;
+/* ==========================================
+   FOOTER STYLE
+   ========================================== */
+.footer {
+    background-color: #111111;
+    color: #faf6ee;
+    padding: 80px 0 40px 0;
+    text-align: center;
 }
 
-.credit {
-    font-size: 0.85rem;
-    color: #8d99ae;
-    margin-top: 20px;
+.footer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-/* Responsive Scaling */
+.footer p {
+    font-family: 'Segoe UI', sans-serif;
+    color: #c4b59f;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================== */
+@media(max-width: 1024px) {
+    .work-gallery-five {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media(max-width: 768px) {
-    .nav-links { display: none; }
-    .timeline-item { grid-template-columns: 1fr; gap: 10px; }
-    .education-grid { grid-template-columns: 1fr; gap: 30px; }
-    .hero-text h1 { font-size: 2.3rem; }
+    .hero-container, .editorial-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .main-title { 
+        font-size: 3.5rem; 
+    }
+    .work-gallery-five {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+    .work-gallery-five {
+        grid-template-columns: 1fr;
+    }
 }
