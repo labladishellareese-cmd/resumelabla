@@ -1,0 +1,244 @@
+/* Base Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: #2b2d42;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a24;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    color: #edf2f4;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #8d99ae;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ef233c;
+}
+
+/* Sections Global */
+.section {
+    padding: 100px 0;
+}
+
+.alt-bg {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #1a1a24;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 4px;
+    background-color: #ef233c;
+}
+
+/* Hero Section */
+.header-section {
+    background: linear-gradient(145deg, #1a1a24 0%, #2b2d42 100%);
+    color: #edf2f4;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 140px;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+}
+
+.hero-text h3 {
+    font-size: 1.5rem;
+    color: #8d99ae;
+    margin: 10px 0 25px 0;
+    font-weight: 400;
+}
+
+.highlight {
+    color: #ef233c;
+}
+
+.bio {
+    font-size: 1.15rem;
+    max-width: 750px;
+    color: #edf2f4;
+    opacity: 0.9;
+}
+
+/* Skills Layout */
+.skills-category h3 {
+    font-size: 1.1rem;
+    color: #8d99ae;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.skill-card {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.tool-proficient { border-left: 4px solid #ef233c; }
+.tool-fam { border-left: 4px solid #2b2d42; }
+.expert-card { border-left: 4px solid #8d99ae; }
+
+/* Experience Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 25px;
+}
+
+.timeline-meta h4 {
+    font-size: 1.2rem;
+    color: #1a1a24;
+}
+
+.timeline-meta span {
+    font-size: 0.9rem;
+    color: #8d99ae;
+}
+
+.timeline-content h5 {
+    font-size: 1.1rem;
+    color: #ef233c;
+    margin-bottom: 8px;
+}
+
+/* Education & Certs Split Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.edu-list, .cert-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.edu-list li {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.cert-item {
+    background: #fff;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #1a1a24;
+    color: #edf2f4;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.footer-section h2 {
+    color: #edf2f4;
+    display: inline-block;
+}
+
+.contact-details {
+    margin: 25px 0;
+}
+
+.contact-details a, .contact-details span {
+    color: #ef233c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+.credit {
+    font-size: 0.85rem;
+    color: #8d99ae;
+    margin-top: 20px;
+}
+
+/* Responsive Scaling */
+@media(max-width: 768px) {
+    .nav-links { display: none; }
+    .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+    .education-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-text h1 { font-size: 2.3rem; }
+}
