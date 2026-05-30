@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Dishella Reese Labla Portfolio loaded.");
+// Get modal elements
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalTargetImg");
+const closeBtn = document.querySelector(".close-btn");
 
-    // Simple interaction logic to dynamically alter block visual focus
-    const cards = document.querySelectorAll('.skill-card, .cert-item');
-    
-    cards.forEach(card => {
-        card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
-        
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.03)';
-            card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)'; // Fixed to camelCase
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
-            card.style.boxShadow = 'none'; // Fixed to camelCase
-        });
+// Find all portfolio images that have the class 'viewable-img'
+document.querySelectorAll('.viewable-img').forEach(image => {
+    image.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImg.src = this.src; // Puts the clicked image inside the popup frame
     });
+});
+
+// Close when hitting the 'X' icon
+closeBtn.addEventListener('click', function() {
+    modal.style.display = "none";
+});
+
+// Close when clicking anywhere out in the dark area
+modal.addEventListener('click', function(e) {
+    if (e.target === modal || e.target === closeBtn) {
+        modal.style.display = "none";
+    }
 });
